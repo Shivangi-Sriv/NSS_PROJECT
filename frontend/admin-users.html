@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Users - NGO Admin</title>
+  <link rel="stylesheet" href="css/admin-users.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="header">
+      <h1>User Management</h1>
+      <button class="btn btn-secondary" onclick="goBack()">← Back to Dashboard</button>
+    </div>
+
+    <div class="content-card">
+      <div class="section-header">
+        <h2>Regular Users</h2>
+        <span class="user-count" id="user-count">0 users</span>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Email Address</th>
+              <th>Role</th>
+              <th id="userActionHeader">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersTable">
+            <tr>
+              <td colspan="3" class="no-data">Loading users...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <div class="section-header">
+        <h2>Administrators</h2>
+        <span class="user-count" id="admin-count">0 admins</span>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Email Address</th>
+              <th>Role</th>
+              <th id="adminActionHeader">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminsTable">
+            <tr>
+              <td colspan="3" class="no-data">Loading admins...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/admin-users.js"></script>
+</body>
+</html>

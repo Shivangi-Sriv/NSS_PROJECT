@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - NGO</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="header">
+      <h1>User Dashboard</h1>
+      <div class="header-actions">
+        <button class="btn btn-primary" onclick="goToDonate()">Donate Now</button>
+        <button class="btn btn-secondary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-icon">👤</div>
+      <div class="profile-info">
+        <label>Email Address</label>
+        <p id="userEmail">Loading...</p>
+      </div>
+      <div class="profile-stats">
+        <div class="stat-box">
+          <span class="stat-number" id="successfulDonationCount">0</span>
+          <span class="stat-label">Successful Donations</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" id="donationCount">0</span>
+          <span class="stat-label">Total Donations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2>Donation History</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Amount (₹)</th>
+              <th>Status</th>
+              <th>Date & Time</th>
+            </tr>
+          </thead>
+          <tbody id="donationTable">
+            <tr>
+              <td colspan="3" class="no-data">Loading donations...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/user.js"></script>
+</body>
+</html>

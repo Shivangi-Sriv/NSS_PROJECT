@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - NGO</title>
+    <link rel="stylesheet" href="css/stripe-success.css">
+</head>
+<body>
+    <div class="success-container">
+        <div class="checkmark"></div>
+        <h1>Payment Successful!</h1>
+        <p id="success-message" class="loading">Verifying your payment...</p>
+        
+        <div class="button-group" style="display: none;" id="action-buttons">
+            <a href="user.html" class="btn btn-primary">View Dashboard</a>
+            <a href="donate.html" class="btn btn-secondary">Donate Again</a>
+        </div>
+    </div>
+
+    <script type="module" src="js/donation.js"></script>
+    <script>
+        setTimeout(() => {
+            document.getElementById('action-buttons').style.display = 'flex';
+        }, 2000);
+    </script>
+</body>
+</html>

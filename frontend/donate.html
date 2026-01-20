@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation - NGO</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="css/donate.css">
+</head>
+<body>
+    <div class="donation-container">
+        <h1>🤝 Make a Donation</h1>
+        <p class="subtitle">Support our cause and make a difference</p>
+
+        <div class="form-group">
+            <label for="amount">Donation Amount (₹)</label>
+            <div class="quick-amounts">
+                <button class="quick-amount-btn" data-amount="100">₹100</button>
+                <button class="quick-amount-btn" data-amount="500">₹500</button>
+                <button class="quick-amount-btn" data-amount="1000">₹1000</button>
+            </div>
+            <input type="number" id="amount" placeholder="Enter custom amount" min="50" step="1">
+        </div>
+
+        <button id="donate-btn">Proceed to Payment</button>
+
+        <!-- Payment Form (Hidden Initially) -->
+        <form id="payment-form">
+            <div id="payment-element"></div>
+            <button type="submit" id="submit-payment">Pay Now</button>
+            <div id="payment-errors"></div>
+        </form>
+
+        <a href="user.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <script type="module" src="js/donation.js"></script>
+    <script>
+        // Quick amount buttons
+        document.querySelectorAll('.quick-amount-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.quick-amount-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('amount').value = btn.dataset.amount;
+            });
+        });
+    </script>
+</body>
+</html>
